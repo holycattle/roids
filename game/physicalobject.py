@@ -1,3 +1,5 @@
+import pyglet
+
 class PhysicalObject(pyglet.sprite.Sprite):
 	def __init__(self, *args, **kwargs):
 		super(PhysicalObject, self).__init__(*args, **kwargs)
@@ -6,7 +8,7 @@ class PhysicalObject(pyglet.sprite.Sprite):
 	def update(self, dt):
 		self.x += self.velocity_x * dt
 		self.y += self.velocity_y * dt
-		check_bounds(self)
+		self.check_bounds()
 
 	def check_bounds(self):
 		min_x = -self.image.width/2
