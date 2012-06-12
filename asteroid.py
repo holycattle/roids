@@ -14,6 +14,7 @@ lives = load.player_lives(2, main_batch)
 
 #add player_ship into the Event Queue
 game_window.push_handlers(player_ship)
+game_window.push_handlers(player_ship.key_handler)
 
 game_objects = [player_ship] + asteroids
 
