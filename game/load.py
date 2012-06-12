@@ -23,8 +23,5 @@ def player_lives(num_icons, batch=None):
 		player_lives.append(new_sprite)
 	return player_lives
 
-
-	
-
 def get_distance(p1=(0, 0), p2=(0,0)):
 	return math.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)

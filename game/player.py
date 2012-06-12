@@ -31,7 +31,7 @@ class Player(physicalobject.PhysicalObject):
 
 		if self.keys['left']:
 			self.rotation -= self.rotate_speed * dt
-		if self.keys['right']
+		if self.keys['right']:
 			self.rotation += self.rotate_speed * dt
 		#brilliant code right here:
 		if self.keys['up']:
