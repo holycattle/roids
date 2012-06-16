@@ -1,4 +1,4 @@
-import physicalobject, resources
+import physicalobject, resources, util
 from pyglet.window import key
 import pyglet
 import math
@@ -33,3 +33,7 @@ class Player(physicalobject.PhysicalObject):
 			self.velocity_y += force_y
 		else:
 			self.thruster_sprite.visible = False
+
+	def delete(self):
+		self.thruster_sprite.delete()
+		super(Player, self).delete()

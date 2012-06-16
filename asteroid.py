@@ -27,6 +27,17 @@ def on_draw():
 def update(dt):
 	for obj in game_objects:
 		obj.update(dt)
+	
+	for i in xrange(len(game_objects)):
+		for j in xrange(i+1, len(game_objects)):
+			o1 = game_objects[i]
+			o2 = game_objects[j]
+			if not o1.dead and not o2.dead:
+				if o1.collides(o2):
+					o1.handle_collision(o2) #handle o2's collision too
+	for to_remove in [obj for obj in game_objects if obj.dead]:
+		to_remove.delete()
+		game_objects.remove(to_remove)
 
 if __name__ == '__main__':
 	pyglet.clock.schedule_interval(update, 1/120.0)

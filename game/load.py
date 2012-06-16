@@ -1,5 +1,6 @@
 import pyglet, random, math
 import resources, physicalobject
+from util import distance
 
 def asteroids(num_asteroids, player_position, batch=None):
 	asteroids = []
